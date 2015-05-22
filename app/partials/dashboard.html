@@ -1,0 +1,44 @@
+
+<div class="wrapper">
+  <div class="navbar text-center">
+    <div class="title pull-left">{{companyName()}}</div>
+    <div class="pull-right">
+      <select id="city" ng-model="city" ng-options="city.name for city in cities"
+      ng-change="fetchDetails(city)"></select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="map height col-md-9">
+      <ui-gmap-google-map center='map.config.center' zoom='map.config.zoom' options="map.options">
+        <ui-gmap-marker ng-repeat="(name, coords) in driversMarkerList track by $index" idkey="$index" coords="coords" options="{icon:'../../app/images/bluecircle.png'}"></ui-gmap-marker>
+
+        <div ng-repeat="(driver, locs) in tasksMarkerList track by $index">
+          <ui-gmap-marker ng-repeat="loc in locs track by $index" idkey="$index" coords="loc"></ui-gmap-marker>
+           <!-- options="{icon:'../../app/images/blue_marker.png'}" -->
+        </div>
+
+        <ui-gmap-polyline ng-repeat="path in poliLines" path='path' stroke="{color: '#FFFF66'}"></ui-gmap-polyline>
+      </ui-gmap-google-map>
+
+    </div>
+    <div class="sidebar height col-md-3">
+      Unassigned Tasks
+      <div ng-repeat="task in unassignedTasks" class="element"
+           ui-draggable="true" drag="task"
+           on-drop-success="removeFromUnassignedTasks($event, $index)">
+        {{task.package_number}} | {{task.address}}
+      </div>
+
+      Drivers
+      <div ng-repeat="driver in drivers" class="element"
+           ui-on-Drop="assignTaskToDriver($vent, $data, driver)">
+        <span ng-click="showMarkers(driver)">{{driver.name}}</span>
+        <div class="inner sortable" ng-repeat="task in driver.tasks">
+          {{task.package_number}} | {{task.address}} <a href="" return false; ng-click="markTaskAsDone(driver, task, $index)"> X </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

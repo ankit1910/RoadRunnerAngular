@@ -1,0 +1,17 @@
+<div id="container">
+  <flash-notice></flash-notice>
+  <div id="loginPage">
+    <div class="formHolder">
+      <form novalidate ng-model="loginForm" class='form-horizontal'>
+        <div class="row">
+          <label for="account_email">Insert Your API Key</label>
+          <input class="text_field" type="password" ng-model="loginForm.api_key" size="30" type="text">
+        </div>
+
+        <div class="row">
+          <input class="login" ng-click="goToDashboard()" name="commit" type="submit" value="Go To Dashboard">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

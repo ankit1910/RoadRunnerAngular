@@ -1,0 +1,15 @@
+Pusher.app_id = '120932'
+Pusher.key = 'e409e0060e42dfb30b4f'
+Pusher.secret = '9918dc9f6ee608a4903c'
+
+Pusher.trigger('location', 'update', { driver: 'lavish.mehta', location: { latitude: "28.6", longitude: "77.1" } })
+
+Pusher.trigger('location', 'update', { driver: 'devanshuu', location: { latitude: "28.5", longitude: "77.2" } })
+
+
+
+20.times do |index|
+  sleep(0.5)
+  factor = index * 0.005
+  Pusher.trigger('location', 'update', { driver: 'lavish.mehta', location: { latitude: (28.6 + factor), longitude: (77.1 + factor) } })
+end
