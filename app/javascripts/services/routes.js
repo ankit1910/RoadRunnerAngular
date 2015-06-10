@@ -3,7 +3,9 @@ roadrunnerServices.factory('Routes', [function() {
   var Routes = {
     Api: {
       companyCityListPath: BasePath + 'companies/city_list',
-      companyDetailsPath: BasePath + 'companies/details_for_dash'
+      companyDriversListPath: BasePath + 'companies/drivers_list',
+      companyDetailsPath: BasePath + 'companies/details_for_dash',
+      driverCreatePath: BasePath + 'deliveries'
     }
   };
   return Routes;

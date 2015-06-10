@@ -1,0 +1,27 @@
+<div id="container">
+  <div id="loginPage">
+    <div class="formHolder">
+      <form novalidate ng-model="form" class='form-horizontal' ng-submit="submit()">
+        <div class="row">
+          <label for="package_number">Package number</label>
+          <input id="package_number" class="text_field" ng-model="package_number" size="6" type="text">
+        </div>
+
+        <div class="row">
+          <label for="city">City</label>
+          <styled-select idValue="city" objects="cities" model-value="city">
+          </styled-select>
+        </div>
+
+        <div class="row">
+          <label for="address">Address</label>
+          <input id="address" class="text_field" ng-model="address" size="30" type="text">
+        </div>
+
+        <div class="row">
+          <input name="commit" type="submit" value="Create Delivery">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

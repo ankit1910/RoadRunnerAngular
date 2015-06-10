@@ -5,5 +5,5 @@ var roadrunnerServices = angular.module('roadrunnerServices', []);
 includeScripts([
   "javascripts/services/cookie.js", "javascripts/services/routes.js",
   "javascripts/services/company.js", "javascripts/services/driver.js",
-  "javascripts/services/map.js"
+  "javascripts/services/map.js", "javascripts/services/delivery.js"
 ]);

@@ -1,0 +1,28 @@
+<div class="tabs_data_container border5">
+  <div class="tabs_data">
+    <div class="examHistory">
+      <h1>Assign Device</h1>
+      <table>
+        <tbody>
+          <tr class="headRow">
+            <th class="name">Driver Name</th>
+            <th class="name">Device Token</th>
+            <th class="status">Action</th>
+          </tr>
+          <tr ng-repeat="driver in drivers">
+              <td class="name">
+                {{driver.name}}
+              </td>
+              <td class="name">
+                <input type="text" ng-model="driver.token">
+              </td>
+              <td class="status">
+                <button ng-click="updateToken(driver)">Update</button>
+              </td>
+            </tr>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

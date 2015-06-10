@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>RoadRunner</title>
-
-  <!-- system stylesheets -->
-  <link rel="stylesheet" href="css/app.css">
   <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
   <script src="//js.pusher.com/2.2/pusher.min.js"></script>
 
-  <!-- bower components -->
+  <!-- bower components Style Sheets -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/ng-sortable/dist/ng-sortable.style.min.css">
+
+  <!-- bower components Javascripts -->
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
@@ -18,23 +18,25 @@
   <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
   <script src="../bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
   <script src="../bower_components/pusher-angular/lib/pusher-angular.js"></script>
+  <script src="../bower_components/ng-sortable/dist/ng-sortable.min.js"></script>
 
-  <!-- system javascripts -->
+  <!-- system stylesheets -->
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- javascripts -->
   <script src="javascripts/global_methods.js"></script>
   <script src="javascripts/app.js"></script>
   <script src="javascripts/controllers.js"></script>
   <script src="javascripts/services.js"></script>
-  <!-- // <script src="js/directives.js"></script> -->
+  <script src="javascripts/directives.js"></script>
   <!-- // <script src="js/filters.js"></script> -->
+
 </head>
 <body ng-controller="MainCtrl">
   <div id="wrapper">
     <div id="header">
-      <div id="nav" class="loggedNav" >{{company_name()}}</div>
-      <div class="right" ng-show="loggedIn()">sjdbcajs
-      </div>
+      <!-- <header-bar></header-bar> -->
     </div>
-
     <div class="view-container">
       <div ng-view class="view-frame"></div>
     </div>

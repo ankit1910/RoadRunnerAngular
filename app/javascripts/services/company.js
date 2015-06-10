@@ -14,6 +14,18 @@ roadrunnerServices.factory('Company', ['$http', 'Routes',
       })
     },
 
+    driversList: function(params, successCB, failureCB) {
+      $http({
+        method: 'GET',
+        url: Routes.Api.companyDriversListPath,
+        params: params
+      }).success(function(data, status, headers, config) {
+        successCB(data);
+      }).error(function(data, status, headers, config) {
+        failureCB(data)
+      })
+    },
+
     driverDetails: function(params, successCB, failureCB) {
       $http({
         method: 'GET',

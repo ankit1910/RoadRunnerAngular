@@ -8,5 +8,6 @@ roadrunnerControllers.controller('MainCtrl', ['$rootScope', '$scope', '$cookieSt
 
 // Include all dependent js after initialization(EOF).
 includeScripts([
-  "javascripts/controllers/dashboard.js", "javascripts/controllers/login.js"
+  "javascripts/controllers/dashboard.js", "javascripts/controllers/login.js",
+  "javascripts/controllers/delivery.js", "javascripts/controllers/device.js"
 ]);
